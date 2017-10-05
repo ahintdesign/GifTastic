@@ -31,24 +31,26 @@
           image.attr("data-state" , still);
           image.attr("data-still" , still);
           image.attr("data-animate" , animate);
+        
           image.addClass("gif");
           
            //TESTING
            // console.log(image);
 
           var pOne = $("<p>");
-          pOne.append(rating);
+          pOne.append("Rating: " + rating);
 
        
-
+        gifDiv.append(pOne);
          gifDiv.append(image);
-         gifDiv.append(pOne);
+         
           $("#images").prepend(gifDiv);
 
       }
 
 
      $(".gif").on("click", function() {
+
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var state = $(this).attr("data-state");
       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
@@ -83,14 +85,8 @@
 
           // Adding a class to button
           a.addClass("buttonFeeling");
-
-          // Adding a data-attribute
           a.attr("data-name", emotions[i]);
-
-          // Initial button text
           a.text(emotions[i]);
-
-          // Add the button to the buttons-view div
           $("#buttons").append(a);
         }
       }
